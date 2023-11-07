@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     97965,       2410]
-NotebookOptionsPosition[     93411,       2333]
-NotebookOutlinePosition[     93877,       2351]
-CellTagsIndexPosition[     93834,       2348]
+NotebookDataLength[     98289,       2418]
+NotebookOptionsPosition[     93734,       2341]
+NotebookOutlinePosition[     94200,       2359]
+CellTagsIndexPosition[     94157,       2356]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2068,38 +2068,39 @@ Cell[BoxData[
   RowBox[{"isGreater", "[", 
    RowBox[{
    "StartPoint_kmPoint", ",", "Point1_kmPoint", ",", "Point2_kmPoint"}], 
-   "]"}], ":=", 
-  RowBox[{
+   "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"If", "[", 
    RowBox[{
-    RowBox[{"getTriangleAlgebraicSquare", "[", 
-     RowBox[{"{", 
-      RowBox[{"StartPoint", ",", "Point2", ",", "Point1"}], "}"}], "]"}], ">",
-     "0"}], "||", 
-   RowBox[{"And", "[", 
     RowBox[{
-     RowBox[{"isPointOnLine", "[", 
-      RowBox[{
-       RowBox[{"kmLine", "[", 
-        RowBox[{"{", 
-         RowBox[{"StartPoint", ",", "Point1"}], "}"}], "]"}], ",", "Point2"}],
-       "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"getTriangleAlgebraicSquare", "[", 
+      RowBox[{"{", 
+       RowBox[{"StartPoint", ",", "Point2", ",", "Point1"}], "}"}], "]"}], "==",
+      "0"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
      RowBox[{
       RowBox[{
-       RowBox[{"kmSegment", "[", 
-        RowBox[{"StartPoint", ",", "Point2"}], "]"}], "[", "\"\<len\>\"", 
-       "]"}], ">", 
-      RowBox[{
-       RowBox[{"kmSegment", "[", 
-        RowBox[{"StartPoint", ",", "Point1"}], "]"}], "[", "\"\<len\>\"", 
-       "]"}]}]}], "]"}]}]}]], "Input",
+       RowBox[{
+        RowBox[{"kmSegment", "[", 
+         RowBox[{"StartPoint", ",", "Point2"}], "]"}], "[", "\"\<len\>\"", 
+        "]"}], "<", 
+       RowBox[{
+        RowBox[{"kmSegment", "[", 
+         RowBox[{"StartPoint", ",", "Point1"}], "]"}], "[", "\"\<len\>\"", 
+        "]"}]}], ",", "True"}], "]"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"getTriangleAlgebraicSquare", "[", 
+      RowBox[{"{", 
+       RowBox[{"StartPoint", ",", "Point2", ",", "Point1"}], "}"}], "]"}], 
+     ">", "0"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
  CellChangeTimes->{{3.9083033642488112`*^9, 3.9083034144311733`*^9}, {
   3.9083035218293686`*^9, 3.9083035618182135`*^9}, {3.908303593367758*^9, 
   3.90830364941908*^9}, {3.9083375083894024`*^9, 3.9083375117636533`*^9}, {
   3.9083459924516354`*^9, 3.9083460150084453`*^9}, {3.908346049831605*^9, 
   3.9083460502694583`*^9}, {3.908346105191553*^9, 3.9083461088938365`*^9}, {
-  3.908346566131075*^9, 3.908346566537698*^9}},
+  3.908346566131075*^9, 3.908346566537698*^9}, {3.9083478561826715`*^9, 
+  3.908347925911724*^9}, {3.908348203333294*^9, 3.908348204098741*^9}},
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->"In[92]:=",ExpressionUUID->"a9d3f6cb-5207-474d-b4bb-03878834329f"],
+ CellLabel->"In[99]:=",ExpressionUUID->"a9d3f6cb-5207-474d-b4bb-03878834329f"],
 
 Cell[BoxData[
  RowBox[{
@@ -2174,7 +2175,8 @@ Cell[BoxData[
   3.908344371932888*^9, 3.908344414060204*^9}, {3.9083460992300377`*^9, 
   3.9083461011670804`*^9}},
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->"In[93]:=",ExpressionUUID->"8dd92e2e-5006-42de-b9ab-2f0c2aa208c2"],
+ CellLabel->
+  "In[100]:=",ExpressionUUID->"8dd92e2e-5006-42de-b9ab-2f0c2aa208c2"],
 
 Cell["\:041f\:0440\:043e\:0432\:0435\:0440\:044f\:044e", "Text",
  CellChangeTimes->{{3.906026844579239*^9, 3.90602686312479*^9}, {
@@ -2206,7 +2208,8 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"0", ",", "3"}], "}"}], "]"}]}], "}"}], "]"}]], "Input",
  CellChangeTimes->{{3.9083045242890606`*^9, 3.9083045249763947`*^9}},
- CellLabel->"In[90]:=",ExpressionUUID->"6d71e66d-bf53-4380-9ce1-e221afa8f98c"],
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"6d71e66d-bf53-4380-9ce1-e221afa8f98c"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2217,23 +2220,25 @@ Cell[BoxData[
        RowBox[{"-", "1"}]}, "RowWithSeparators"], "\")\""},
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
-     TemplateBox[{",", "\",\"", "0", "3"}, "RowWithSeparators"], "\")\""},
-    "RowDefault"], ",", 
-   TemplateBox[{"\"Point\"", "\"(\"", 
-     TemplateBox[{",", "\",\"", "1", "2"}, "RowWithSeparators"], "\")\""},
+     TemplateBox[{",", "\",\"", "5", "1"}, "RowWithSeparators"], "\")\""},
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
      TemplateBox[{",", "\",\"", "9", "4"}, "RowWithSeparators"], "\")\""},
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
-     TemplateBox[{",", "\",\"", "5", "1"}, "RowWithSeparators"], "\")\""},
+     TemplateBox[{",", "\",\"", "1", "2"}, "RowWithSeparators"], "\")\""},
+    "RowDefault"], ",", 
+   TemplateBox[{"\"Point\"", "\"(\"", 
+     TemplateBox[{",", "\",\"", "0", "3"}, "RowWithSeparators"], "\")\""},
     "RowDefault"]}], "}"}]], "Output",
  CellChangeTimes->{
   3.9083045496357408`*^9, 3.908337518012684*^9, 3.908338534482178*^9, {
    3.908338579720767*^9, 3.9083386225871716`*^9}, {3.9083433756910124`*^9, 
    3.9083433998027387`*^9}, 3.908343897882674*^9, {3.9083443816332793`*^9, 
-   3.9083444210425086`*^9}, 3.9083461216246276`*^9},
- CellLabel->"Out[90]=",ExpressionUUID->"3061ac11-9ce7-43c8-86d0-ec11eed7e766"]
+   3.9083444210425086`*^9}, 3.9083461216246276`*^9, 3.9083481338073235`*^9, 
+   3.908348207550619*^9},
+ CellLabel->
+  "Out[101]=",ExpressionUUID->"c97446ae-9f9c-439d-ae34-deeec8cf0eb2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2282,7 +2287,8 @@ Cell[BoxData[
        RowBox[{"-", "2"}], ",", "6"}], "}"}], "]"}]}], "}"}], "]"}]], "Input",
  CellChangeTimes->{{3.9083455982635436`*^9, 3.9083458274046855`*^9}, {
   3.90834585902067*^9, 3.9083458598646536`*^9}},
- CellLabel->"In[94]:=",ExpressionUUID->"2de5e5f2-84c8-438d-bd09-609b2865d657"],
+ CellLabel->
+  "In[102]:=",ExpressionUUID->"2de5e5f2-84c8-438d-bd09-609b2865d657"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -2301,21 +2307,13 @@ Cell[BoxData[
      TemplateBox[{",", "\",\"", "10", "4"}, "RowWithSeparators"], "\")\""},
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
-     TemplateBox[{",", "\",\"", "8", "6"}, "RowWithSeparators"], "\")\""},
-    "RowDefault"], ",", 
-   TemplateBox[{"\"Point\"", "\"(\"", 
      TemplateBox[{",", "\",\"", "5", "4"}, "RowWithSeparators"], "\")\""},
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
+     TemplateBox[{",", "\",\"", "8", "6"}, "RowWithSeparators"], "\")\""},
+    "RowDefault"], ",", 
+   TemplateBox[{"\"Point\"", "\"(\"", 
      TemplateBox[{",", "\",\"", "3", "4"}, "RowWithSeparators"], "\")\""},
-    "RowDefault"], ",", 
-   TemplateBox[{"\"Point\"", "\"(\"", 
-     TemplateBox[{",", "\",\"", 
-       RowBox[{"-", "1"}], "4"}, "RowWithSeparators"], "\")\""},
-    "RowDefault"], ",", 
-   TemplateBox[{"\"Point\"", "\"(\"", 
-     TemplateBox[{",", "\",\"", 
-       RowBox[{"-", "1"}], "3"}, "RowWithSeparators"], "\")\""},
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
      TemplateBox[{",", "\",\"", 
@@ -2323,11 +2321,21 @@ Cell[BoxData[
     "RowDefault"], ",", 
    TemplateBox[{"\"Point\"", "\"(\"", 
      TemplateBox[{",", "\",\"", 
+       RowBox[{"-", "1"}], "3"}, "RowWithSeparators"], "\")\""},
+    "RowDefault"], ",", 
+   TemplateBox[{"\"Point\"", "\"(\"", 
+     TemplateBox[{",", "\",\"", 
+       RowBox[{"-", "1"}], "4"}, "RowWithSeparators"], "\")\""},
+    "RowDefault"], ",", 
+   TemplateBox[{"\"Point\"", "\"(\"", 
+     TemplateBox[{",", "\",\"", 
        RowBox[{"-", "2"}], "6"}, "RowWithSeparators"], "\")\""},
     "RowDefault"]}], "}"}]], "Output",
  CellChangeTimes->{3.9083458280451193`*^9, 3.90834586042656*^9, 
-  3.9083461256549287`*^9, 3.908346570942479*^9},
- CellLabel->"Out[94]=",ExpressionUUID->"80ef4aeb-87b1-4582-b2b3-852a256df2f1"]
+  3.9083461256549287`*^9, 3.908346570942479*^9, 3.9083479306543303`*^9, 
+  3.9083482084878664`*^9},
+ CellLabel->
+  "Out[102]=",ExpressionUUID->"a835b9c0-c2fb-43f8-8aed-cac7fe37cdca"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -2400,16 +2408,16 @@ Cell[80897, 2023, 680, 12, 338, "Output",ExpressionUUID->"36cb75fc-4c8a-4415-a9e
 Cell[CellGroupData[{
 Cell[81626, 2041, 239, 4, 59, "Section",ExpressionUUID->"666ac3e7-7bfe-48bb-b1db-d97d9649797e"],
 Cell[81868, 2047, 1053, 16, 52, "Text",ExpressionUUID->"f2e65b36-a474-4fba-acef-c79d23e6d12c"],
-Cell[82924, 2065, 1466, 36, 75, "Input",ExpressionUUID->"a9d3f6cb-5207-474d-b4bb-03878834329f"],
-Cell[84393, 2103, 3291, 73, 349, "Input",ExpressionUUID->"8dd92e2e-5006-42de-b9ab-2f0c2aa208c2"],
-Cell[87687, 2178, 279, 4, 45, "Text",ExpressionUUID->"2003ae59-b708-43bb-a1ec-96f4ddd53bee"],
+Cell[82924, 2065, 1668, 37, 109, "Input",ExpressionUUID->"a9d3f6cb-5207-474d-b4bb-03878834329f"],
+Cell[84595, 2104, 3295, 74, 349, "Input",ExpressionUUID->"8dd92e2e-5006-42de-b9ab-2f0c2aa208c2"],
+Cell[87893, 2180, 279, 4, 45, "Text",ExpressionUUID->"2003ae59-b708-43bb-a1ec-96f4ddd53bee"],
 Cell[CellGroupData[{
-Cell[87991, 2186, 786, 22, 25, "Input",ExpressionUUID->"6d71e66d-bf53-4380-9ce1-e221afa8f98c"],
-Cell[88780, 2210, 1170, 25, 28, "Output",ExpressionUUID->"3061ac11-9ce7-43c8-86d0-ec11eed7e766"]
+Cell[88197, 2188, 790, 23, 25, "Input",ExpressionUUID->"6d71e66d-bf53-4380-9ce1-e221afa8f98c"],
+Cell[88990, 2213, 1224, 27, 28, "Output",ExpressionUUID->"c97446ae-9f9c-439d-ae34-deeec8cf0eb2"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[89987, 2240, 1501, 44, 43, "Input",ExpressionUUID->"2de5e5f2-84c8-438d-bd09-609b2865d657"],
-Cell[91491, 2286, 1892, 43, 28, "Output",ExpressionUUID->"80ef4aeb-87b1-4582-b2b3-852a256df2f1"]
+Cell[90251, 2245, 1505, 45, 43, "Input",ExpressionUUID->"2de5e5f2-84c8-438d-bd09-609b2865d657"],
+Cell[91759, 2292, 1947, 45, 28, "Output",ExpressionUUID->"a835b9c0-c2fb-43f8-8aed-cac7fe37cdca"]
 }, Open  ]]
 }, Open  ]]
 }
